@@ -7,11 +7,40 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}{% endblock %}</title>
+    <style>
+        .container {
+            margin: 20px;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            background-color: #f0ad4e;
+            color: #fff;
+            border: none;
+        }
+
+        .btn:hover {
+            background-color: #ec971f;
+        }
+    </style>
 </head>
+<body>
   <div class="container">
       <h1>Fishing counting pad</h1>
+      <a href="/" class="btn btn-warning">Home Page</a>
   </div>
-<body>
   {% block body %}{% endblock %}
 </body>
 </html>

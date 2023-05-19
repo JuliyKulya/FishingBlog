@@ -63,6 +63,7 @@ Your notes
 <div class="container mt-5">
     <h1>Your notes</h1>
 
+
     {% if notes|length > 0 %}
         {% for n in notes %}
         <div class="alert alert-info">
@@ -70,7 +71,6 @@ Your notes
             <p>{{ n.intro }}</p>
             <p><b>{{ n.date.date() }}</b></p>
             <a href="/read-note/{{n.id}}" class="btn btn-warning">Read</a>
-            <a class="btn btn-warning" href="/add-note">Create note</a>
         </div>
         {% endfor %}
     {% else %}
