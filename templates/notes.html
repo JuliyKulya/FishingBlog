@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Your notes
+{% endblock %}
+
+{% block body %}
+<style>
+    .container {
+        margin: 20px;
+        padding: 20px;
+        background-color: #f0f0f0;
+    }
+
+    h1 {
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .alert {
+        padding: 15px;
+        margin-bottom: 20px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+    }
+
+    .alert-info {
+        background-color: #d9edf7;
+        border-color: #bce8f1;
+        color: #31708f;
+    }
+
+    h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 4px;
+        text-decoration: none;
+        background-color: #f0ad4e;
+        color: #fff;
+        border: none;
+    }
+
+    .btn:hover {
+        background-color: #ec971f;
+    }
+
+    .mt-5 {
+        margin-top: 5px;
+    }
+</style>
+<div class="container mt-5">
+    <h1>Your notes</h1>
+
+    {% if notes|length > 0 %}
+        {% for n in notes %}
+        <div class="alert alert-info">
+            <h2>{{ n.title }}</h2>
+            <p>{{ n.intro }}</p>
+            <p><b>{{ n.date.date() }}</b></p>
+            <a href="/read-note/{{n.id}}" class="btn btn-warning">Read</a>
+        </div>
+        {% endfor %}
+    {% else %}
+    <p>No notes on the website</p>
+    {% endif %}
+</div>
+{% endblock %}
+

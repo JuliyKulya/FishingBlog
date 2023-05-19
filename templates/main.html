@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<style>
+    .container {
+        margin: 20px;
+        padding: 20px;
+        background-color: #f0f0f0;
+    }
+
+    h1 {
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 4px;
+        text-decoration: none;
+        background-color: #ffc107;
+        color: #fff;
+        border: none;
+    }
+
+    .btn:hover {
+        background-color: #ffa000;
+    }
+</style>
+<div class="container">
+    <h1>Hello, you can add a new note or open an existing one</h1>
+    <a class="btn btn-warning" href="/add-note">Create note</a>
+    <a class="btn btn-warning" href="/read-note">Your notes</a>
+</div>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<style>
+    .container {
+        margin: 20px;
+        padding: 20px;
+        background-color: #f0f0f0;
+    }
+
+    h1 {
+        color: #333;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+    }
+
+    .form-control-lg {
+        height: 200px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 4px;
+        text-decoration: none;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+    }
+
+    .btn:hover {
+        background-color: #45a049;
+    }
+
+    .mt-5 {
+        margin-top: 5px;
+    }
+</style>
+<div class="container mt-5">
+    <h1>Adding notes</h1>
+    <form method="post">
+        <label for="title">Title for new note</label><input type="text" name="title" id="title" class="form-control" placeholder="Enter title"><br>
+        <label for="intro">Description for new note</label><textarea name="intro" id="intro" class="form-control" placeholder="Enter description"></textarea><br>
+        <label for="text">Write a note</label><textarea name="text" id="text" class="form-control form-control-lg" placeholder="Write your note here"></textarea><br>
+        <input type="submit" class="btn btn-success" value="Send">
+    </form>
+</div>
+{% endblock %}

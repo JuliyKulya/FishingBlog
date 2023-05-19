@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{ note.title }}
+{% endblock %}
+
+{% block body %}
+<style>
+    .container {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.alert {
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert-info {
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    color: #31708f;
+}
+
+.alert-info h2 {
+    color: #245269;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.alert-info p {
+    color: #245269;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.btn-danger {
+    background-color: #d9534f;
+    border-color: #d43f3a;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #c9302c;
+    border-color: #ac2925;
+}
+
+.btn-success {
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    color: #fff;
+}
+
+.btn-success:hover {
+    background-color: #449d44;
+    border-color: #398439;
+}
+</style>
+<div class="container mt-5">
+    <h1>{{ note.title }}</h1>
+
+    <div class="alert alert-info">
+        <h2>{{ note.intro }}</h2>
+        <p>{{ note.text }}</p>
+        <p><b>Date: {{ note.date.date() }}</b></p>
+        <a href="/read-note/{{note.id}}/delete" class="btn btn-danger">Delete note</a>
+        <a href="/read-note/{{note.id}}/update" class="btn btn-success">Update note</a>
+    </div>
+</div>
+{% endblock %}
